@@ -1,17 +1,18 @@
 package com.rpsgame.bean;
 
+import com.rpsgame.entity.GameEntity;
 import com.rpsgame.util.Constants;
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
  * @author l.gil
  */
-@Named(value = "rpsGameManagedBean")
-@SessionScoped
 public class RPSGameManagedBean implements Serializable {
+    
+    private ArrayList<GameEntity> gamesList; 
     
     private Integer draw;    
     private Integer winPlayer1;
@@ -21,9 +22,41 @@ public class RPSGameManagedBean implements Serializable {
      * Creates a new instance of RSPGameManagedBean
      */
     public RPSGameManagedBean() {
+        gamesList = new ArrayList<GameEntity>();   
         draw = 0;    
         winPlayer1 = 0;
         lossPlayer1 = 0;
+    }
+    
+    /**
+     * Action that returns the game result
+     * @return 
+     */
+    public String startProcess() {
+        // Restarts the results
+        gamesList = new ArrayList<GameEntity>();
+        winPlayer1 = 0;
+        lossPlayer1 = 0;
+        draw = 0;
+        
+        for(int i = 1; i <= Constants.GAMES; i++) {       
+            // Random option for player1
+            int idx = new Random().nextInt(Constants.OPTIONS.length);
+            String optionPlayer1 = (Constants.OPTIONS[idx]);
+            
+            // Checks the result of each game
+            Integer result = checkWinner(optionPlayer1);            
+  
+            // Sets the result
+            GameEntity game = new GameEntity();
+            game.setGameId(i);
+            game.setResult(result);
+            game.setPlayer1(optionPlayer1);
+            game.setPlayer2(Constants.ROCK);
+            
+            gamesList.add(game);
+        }        
+        return "startProcess";
     }
     
     /**
@@ -54,6 +87,20 @@ public class RPSGameManagedBean implements Serializable {
                 break;
         }        
         return result;
+    }
+    
+    /**
+     * @return the gameList
+     */
+    public ArrayList<GameEntity> getGamesList() {
+        return gamesList;
+    }
+
+    /**
+     * @param gameList the gameList to set
+     */
+    public void setGamesList(ArrayList<GameEntity> gameList) {
+        this.gamesList = gameList;
     }
     
     /**

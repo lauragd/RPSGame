@@ -1,12 +1,63 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="resources/css/style.css"></link>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <div id="main" class="main">        
+            <h:form>              
+                <h:panelGrid id="panel" columns="2" class="features-table" 
+                             headerClass="col-cellh " 
+                             columnClasses="col-cell col-cell1" 
+                             rowClasses=""
+                             footerClass="col-cellf ">
+                    <f:facet name="header" class="">
+                        <h:outputLabel value="ROCK-PAPER-SCISSORS"/> 
+                    </f:facet>
+
+                    <h:panelGrid columns="1" columnClasses="col-cell" class="features-subtable">  
+                        <h:outputLabel value="PLAYER 1" />
+                        <h:graphicImage value="resources/img/woman.ico" />
+                    </h:panelGrid>
+                    
+                    <h:panelGrid columns="2" class="features-subtable">  
+                        <h:outputLabel value="Win: "/>       
+                        <h:outputLabel value="#{rpsGameManagedBean.winPlayer1}"/> 
+
+                        <h:outputLabel value="Draw: "/>    
+                        <h:outputLabel value="#{rpsGameManagedBean.draw}"/>                        
+
+                        <h:outputLabel value="Loss: "/>   
+                        <h:outputLabel value="#{rpsGameManagedBean.lossPlayer1}"/>
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="1" columnClasses="col-cell" class="features-subtable">  
+                        <h:outputLabel value="PLAYER 2" />
+                        <h:graphicImage value="resources/img/man.ico" />
+                    </h:panelGrid>
+                    <h:panelGrid columns="2" class="features-subtable">  
+                        <h:outputLabel value="Win: "/>       
+                        <h:outputLabel value="#{rpsGameManagedBean.lossPlayer1}"/> 
+
+                        <h:outputLabel value="Draw: "/>    
+                        <h:outputLabel value="#{rpsGameManagedBean.draw}"/>                        
+
+                        <h:outputLabel value="Loss: "/>   
+                        <h:outputLabel value="#{rpsGameManagedBean.winPlayer1}"/>
+                    </h:panelGrid>
+
+                    <f:facet name="footer">
+                        <h:panelGroup style="display:block; text-align:center">
+                            <h:commandButton action="#{rpsGameManagedBean.startProcess}" value="Play" class="button play"/>
+                            <h:commandButton action="details?faces-redirect=true" value="More info" class="button moreinfo"/>
+                        </h:panelGroup>
+                    </f:facet>
+                </h:panelGrid>
+            </h:form>
+        </div>    
     </h:body>
 </html>
-

@@ -1,0 +1,155 @@
+/* 
+    Author: l.gil
+*/
+
+body {
+    background: rgba(144, 144, 144, 0.15) none repeat scroll 0 0;
+    margin: 0;
+    padding: 0;
+}
+.main {
+    background: white none repeat scroll 0 0;
+    border: 1px solid #adaa9f;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px #9c9c9c;
+    margin: 100px auto 0;
+    padding: 50px;
+    width: 660px;
+}
+
+.main.details {   
+    padding-top: 20px;
+}
+
+.features-table {
+    background: #fafafa linear-gradient(to top, #fff 0%, #eaeaea 50%, #fff 100%) repeat scroll 0 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #2a2a2a;
+    font-family: Verdana,Arial,Helvetica;
+    margin: 0 auto;
+    text-shadow: 0 1px 0 #fff;
+    width: 100%;
+}
+.features-table td {
+    border-bottom: 1px solid #cdcdcd;
+    box-shadow: 0 1px 0 white;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    white-space: nowrap;
+}
+
+.features-subtable td {
+    border-bottom: 0px solid #cdcdcd;
+    box-shadow: 0 0px 0 white;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    white-space: nowrap;
+}
+
+.no-border td {
+    border-bottom: medium none;
+    box-shadow: none;
+}
+.col-cell {
+    font: bold 1em Verdana,Arial,Helvetica;
+    text-align: center;
+    width: 200px;
+}
+
+.col-details.col-cell {
+    width: 150px;
+}
+
+.row-cell {
+    text-align: center;
+}
+
+.col-cell1, .col-cell2 {
+    background: rgba(144, 144, 144, 0.15) none repeat scroll 0 0;
+    border-right: 1px solid white;
+}
+.col-cell3 {
+    background: rgba(184, 243, 85, 0.3) none repeat scroll 0 0;
+}
+.col-cellh {
+    background: #fafafa linear-gradient(to top, #fff 0%, #eaeaea 50%, #fff 100%) repeat scroll 0 0;
+    height: 50px;
+    border-top: 1px solid #eaeaea !important;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font: bold 1.3em "trebuchet MS","Lucida Sans",Arial;
+}
+
+.header-details {
+    background: #fafafa linear-gradient(to top, #fff 0%, #eaeaea 50%, #fff 100%) repeat scroll 0 0;
+    height: 50px;
+    border-top: 1px solid #eaeaea !important;
+    font: bold 1.3em "trebuchet MS","Lucida Sans",Arial;
+}
+
+.header-details:first-child {
+    border-top-left-radius: 10px;   
+}
+
+.header-details:last-child {
+    border-top-right-radius: 10px;   
+}
+
+.col-cellf {
+    background: #fafafa linear-gradient(to top, #fff 0%, #eaeaea 50%, #fff 100%) repeat scroll 0 0;
+    border-bottom: 1px solid #dadada !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.button {        
+    display: inline-block;
+    white-space: nowrap;
+    background-color: #ddd;
+    background-image: linear-gradient(top, #eee, #ccc);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eeeeee', EndColorStr='#cccccc');  
+    padding: 0 1em;
+    margin: 0.5em;
+    font: 1.3em "trebuchet MS","Lucida Sans",Arial;
+    text-decoration: none;
+    color: #333;
+    text-shadow: 0 1px 0 rgba(255,255,255,.8);
+    border-radius: .2em;
+}
+
+.button.details { 
+    margin: 1em 0;    
+}    
+
+.button:hover {
+    background-color: #ccc;        
+    background-image: linear-gradient(top, #fafafa, #ddd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#dddddd');        
+}
+
+.button:active {
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.3) inset;
+    position: relative;
+    top: 1px;
+}
+
+.button:focus {
+    outline: 0;
+    background: #fafafa;
+}  
+
+.img-header{
+    height: 28px;
+    width: 28px;
+    float: left;
+    margin-right: -20px;
+    margin-left: 20px;        
+}
+
+.details-img{
+    height: 28px;
+    width: 28px;       
+}
