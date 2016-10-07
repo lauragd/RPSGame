@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.rpsgame.bean;
 
+import com.rpsgame.util.Constants;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -42,7 +38,15 @@ public class RPSGameManagedBeanTest {
      */
     @Test
     public void testRockForPlayer1() {
-        assertTrue(true);
+        System.out.println("testRockForPlayer1");
+        RPSGameManagedBean instance = new RPSGameManagedBean();
+        
+        String optionPlayer1 = Constants.ROCK;
+        
+        Integer expResult = 0;
+        Integer result = instance.checkWinner(optionPlayer1);
+        
+        assertEquals(expResult, result);  
     }
     
      /**
