@@ -55,7 +55,15 @@ public class RPSGameManagedBeanTest {
      */
     @Test
     public void testPaperForPlayer1() {
-        assertTrue(true);
+        System.out.println("testPaperForPlayer1");
+        RPSGameManagedBean instance = new RPSGameManagedBean();
+        
+        String optionPlayer1 = Constants.PAPER;
+        
+        Integer expResult = 1;
+        Integer result = instance.checkWinner(optionPlayer1);
+        
+        assertEquals(expResult, result);        
     }
     
     /**
@@ -64,6 +72,14 @@ public class RPSGameManagedBeanTest {
      */
     @Test
     public void testScissorsForPlayer1() {
-        assertTrue(true);
+        System.out.println("testScissorsForPlayer1");
+        RPSGameManagedBean instance = new RPSGameManagedBean();
+        
+        String optionPlayer1 = Constants.SCISSORS;
+        
+        Integer expResult = 2;
+        Integer result = instance.checkWinner(optionPlayer1);
+        
+        assertEquals(expResult, result);        
     }
 }
